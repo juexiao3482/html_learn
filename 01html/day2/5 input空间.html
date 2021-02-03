@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table width="600" border="0" cellspacing="0" cellpadding="0" align="center">
+        <caption><h4>青春不常在，抓紧谈恋爱</h4></caption>
+        <tr height="30">
+            <td>性别</td>
+            <td><input type="radio" name="sex"><img src="image/man.jpg">男 <input type="radio" name="sex" checked="checked"><img src="image/women.jpg">女</td>
+        </tr>
+        <tr height="30">
+            <td>生日</td>
+            <td>
+                <select name="year" id="">
+                    <option value="">选择年份</option>
+                    <option value="">1990</option>
+                    <option value="">1991</option>
+                    <option value="">1992</option>
+                    <option value="">1993</option>
+                    <option value="">1994</option>
+                </select>
+                <select name="month" id="">
+                    <option value="">选择月份</option>
+                    <option value="" selected="selected">1月</option>
+                    <option value="">2月</option>
+                    <option value="">3月</option>
+                    <option value="">4月</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="local">所在地区</label></td>
+            <td><input type="text" value="北京" id="local"></td>
+        </tr>
+        <tr>
+            <td>婚姻状况</td>
+            <td><input type="radio" name="marry">未婚 <input type="radio" name="marry">离婚 <input type="radio" name="marry">丧偶</td>
+        </tr>
+        <tr> 
+            <td>学历</td>
+            <td><input type="text" value="小学"></td>
+        </tr>
+        <tr>
+            <td>月薪</td>
+            <td><input type="text" value="5000-8000"></td>
+        </tr>
+        <tr>
+            <td>手机号</td>
+            <td><input type="password"></td>
+        </tr>
+        <tr>
+            <td>昵称</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>喜欢的类型</td>
+            <td><input type="checkbox" name="loved">活泼 <input type="checkbox" name="loved">温柔 <input type="checkbox" name="loved">内向</td>
+        </tr>
+        <tr>
+            <td>自我介绍</td>
+            <td><textarea name="introduce" id="" cols="40" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td>上传头像</td>
+            <td><input type="file"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" value="注册">
+                <input type="image" src="image/btn.png" value="注册">
+                <input type="submit" value="提交">
+                <input type="reset" value="重置">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!--
+    radio如果是一组要命名相同的名字，实现多选一“name”
+
+    id是在lable中使用的，label中for的参数对应的与input中的id对应，
+    点击lable中的内容就可以定位到相同id的input
+
+    默认选中checked="cheaked"
+    select中使用selected="selected"
+
+
+-->
