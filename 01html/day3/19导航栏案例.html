@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 行内元素，或者行内块元素可以看做文本，例如a，span等 */
+        .nav{
+            text-align: center;
+        }
+        .nav a {
+            display: inline-block;
+            background-color: aqua;
+            text-align: center;
+            background-image: url(images/bg.PNG);
+            width: 120px;
+            height: 50px;
+            text-decoration: none;
+            color: white;
+            /* 让盒子内的文字居中对齐 */
+            text-align: center;
+            /* 行高等于盒子的高度，可以让单行！！文本垂直居中 */
+            line-height: 50px;
+            
+        }
+        .nav a:hover {
+            background-image: url(images/bgc.PNG);
+            color: blue;
+        }
+        .banner{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav"> 
+        <a href="#">网站导航</a> 
+        <a href="#">网站导航</a> 
+        <a href="#">网站导航</a> 
+        <a href="#">网站导航</a> 
+        <a href="#">网站导航</a> 
+        <a href="#">网站导航</a>
+    </div>
+    <div class="banner">
+        123
+    </div>
+
+    
+ 
+</body>
+</html>

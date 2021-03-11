@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li > a{ /*子代选择器，子是亲儿子，就是li下面直属的a，不是div下面的a*/
+            color:red ;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="father">
+        <li>
+            <a href="#">一级菜单</a>
+            <div>
+                <a href="#">二级菜单</a>
+                <a href="#">二级菜单</a>
+                <a href="#">二级菜单</a>
+
+            </div>
+
+        </li>
+    </ul>
+</body>
+</html>
