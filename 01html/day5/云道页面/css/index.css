@@ -1,0 +1,43 @@
+/* 先删除内外边距 */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color: #fafafa;
+}
+li {
+    list-style: none;
+}
+/* 顶部导航栏 */
+.header {
+    height: 100px;
+    background-color: #fff;
+}
+.inner{
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    /* background-color: pink; */
+    line-height: 100px;
+    /* 继承 */
+}
+.logo{
+    float: left;
+    /* 不需要写宽高，因为父亲会限定他 */
+}
+.nav {
+    float: right;
+
+}
+.nav li {
+    float: left;
+    margin: 0 20px;
+}
+.nav li a{
+    color: #333;
+    text-decoration: none;
+}
+.nav li a:hover{
+    color: #2288f6;
+}
