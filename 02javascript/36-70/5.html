@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj =new Object();
+        // 塑料袋
+        obj.name = "孙悟空";
+        console.log(obj.name);
+        obj.name="tom";
+        delete obj.name;
+        console.log("test2" in obj);
+        var obj2 ={}
+        // 该方法和new object一样
+        var obj2 = {name:"123",age:28,gender:"男"};
+        var obj2 = {
+            "name":"123",//引号加不加都行，如果是特殊的最好加，最后一个熟悉不加逗号
+            age:28,
+            gender:"男"
+        };
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
