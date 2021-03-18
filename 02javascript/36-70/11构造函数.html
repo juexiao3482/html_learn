@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //构造函数
+        function Person(name,age,gender){
+            //在构造函数中用this来引用新建的对象，
+            // 将内容添加到新建的对象中
+        
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = function() {
+                alert(this.name);
+            };
+
+        }
+        //加new就是构造函数，不加就是普通函数
+        var per = new Person("孙悟空",18,"男");
+        //检查对象是否是一个类的实例
+        //是返回true，不是返回false、
+        //通过构造函数，使其有类型的概念
+        //任何对象都是object后代
+        console.log(per instanceof Person);
+        // 优化,但是函数定义在了全局作用于会污染整体环境
+        function Person(name,age,gender){
+            //在构造函数中用this来引用新建的对象，
+            // 将内容添加到新建的对象中
+        
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = fun;
+
+        }
+        function fun(){
+            alert(this.name);   
+        };
+
+
+
+         
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
