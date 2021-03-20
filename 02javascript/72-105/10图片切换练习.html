@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;    
+        }
+        #outer {
+            width: 500px;
+            margin: 50px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(121, 69, 151);
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+            // 获取img标签 即使只有一个元素返回的也是数组，因此【0】，取出第一个元素
+            var img = document.getElementsByTagName("img")[0];
+            var imgArr = ["images/img/1.jpg","images/img/2.jpg","images/img/3.jpg","images/img/4.jpg","images/img/5.jpg"];
+            var index = 0;
+            var info = document.getElementById("info");
+            // 在这不行的原因是一开始执行的，不是每一次点击都执行一次
+            info.innerHTML = "一共"+imgArr.length+"张图片，"+"当前第"+(index+1)+"张";
+            prev.onclick = function(){
+                // alert("上一张");
+                index--;
+                if (index<0){
+                    index = imgArr.length-1;
+                }
+                img.src = imgArr[index];
+                info.innerHTML = "一共"+imgArr.length+"张图片，"+"当前第"+(index+1)+"张";
+            }
+            next.onclick = function(){
+                // alert("下一张");
+                index++;
+                // 判断也要先判断
+                if (index>imgArr.length-1){
+                    index = 0
+                }
+                img.src = imgArr[index];
+                info.innerHTML = "一共"+imgArr.length+"张图片，"+"当前第"+(index+1)+"张";
+                // 放在这就点第一下不会换，导致要点两次才能到第二张，因为一开始已经显示了第一张
+                // index++;
+                // if (index>imgArr.length-1){
+                //     index = 0
+                // }
+            }
+            // 修改一个元素的属性，就是元素.属性=属性值
+        }
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <p id="info">一共五张，当前第 张</p>
+        <img src="images/img/1.jpg" alt="冰棍">
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+
+    </div>
+    
+</body>
+</html>

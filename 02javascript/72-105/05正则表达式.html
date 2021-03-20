@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var reg = new RegExp("a");
+        var str = "a";
+        // 严格区分大小写，i忽略
+        var result=reg.test(str);
+        console.log(result);
+        // 字面量写法
+        // var 变量 = /正则表达式/匹配模式;
+        reg = /a/i;
+        reg = /a|b/;
+        // |、[]或的关系,eg[ab],[a-z]
+
+        // 手机号,$限定位数，后面不能再有其他了
+        var phone = /^1[3-9][0-9]{9}$/
+
+        // 去除空格
+        // 空串替换空格
+        var str = "      hello     ";
+        str = str.replace(/\s/, "");
+        // \s表示空格
+        //  去掉前后的空格，不去掉中间的
+        str = str.replace(/^\s*/, "");
+        // 去除开头的0个或多个空格
+
+        str = str.replace(/\s*$/, "");
+        // 去除结尾的0个或多个空格
+
+
+        str = str.replace(/^\s*|\s*$/g, "");
+
+        str = str.replace(/^\s+|\s+$/g, "");
+        // 去除开头或者结尾的0个或多个空格
+        // *0个或多个，+1个或多个
+        
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

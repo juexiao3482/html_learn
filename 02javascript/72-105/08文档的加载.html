@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    // 在整个页面加载完成之后才触发，为window绑定一个onload事件
+    // 该事件对应的响应函数将会在页面加载结束后执行
+    // 确保代码执行是所有的dom对象已经加载完毕
+        window.onload = function () {
+            "use strict";
+            // 为啥这行注释了也能正常运行？
+            // 因为id命名，window知道这个id名，所以严格模式下也能运行。
+            // var btn = document.getElementById("btn")
+            
+            // 为按钮绑定一个单机响应函数
+            btn.onclick = function () {
+                alert("你还点");
+            };
+            // 打印出来的是btn这个按钮，说明btn是全局变量，在window中
+            console.log(window.btn);
+        }
+    </script>
+</head>
+<body>
+    <button id="btn" onclick="alert('讨厌');">我是按钮</button>
+          
+</body>
+</html>
