@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- <h2 :style="{key(css属性名)：value（属性值）}">{{message}}</h2> -->
+    <!-- 加单引号当成字符串，不加是变量 -->
+    <h2 :style="{fontSize:finalSize+'px',color:finalColor}">{{message}}</h2>
+    <h2 :style="getStyles()">{{message}}</h2>
+    <h2 :style="[bstyle,bstyle1]">{{message}}</h2>
+  </div>
+  <script src="../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好',
+        finalSize: 100,
+        finalColor: 'red',
+        bstyle: { backgroundColor: 'red' }
+      },
+      methods: {
+        getStyles: function () {
+          return { fontSize: this.finalSize + 'px', backgroundColor: this.finalColor }
+        }
+      },
+    })
+  </script>
+
+</body>
+
+</html>

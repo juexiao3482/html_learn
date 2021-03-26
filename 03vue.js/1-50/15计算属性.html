@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '',
+      },
+      // 调用时一定不能加（）
+      computed: {
+        // 计算属性一般没有set方法，所以是只读属性
+        // 文档14中的写法是简写
+        fullname: {
+          set: function () {
+
+          },
+          get: function () {
+            return 'abc'
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

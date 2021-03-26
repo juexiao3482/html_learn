@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .mov {
+      color: blueviolet;
+    }
+  </style>
+</head>
+<!--  -->
+
+<body>
+  <div id="app">
+    <ul>
+      <!--  初始第一个为其他颜色，是因为currentIndex=0,所以只有第一个下标和他相等 -->
+      <!--  @click="myclick(index)"这个index是movie的index,被点击的index -->
+      <li v-for="(item,index) in movie" :class="{mov:currentIndex === index}" @click="myclick(index)">
+        {{index}}.{{item}}
+      </li>
+    </ul>
+  </div>
+  <script src="../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        movie: ['q', 'b', 'g', 'f'],
+        currentIndex: 0
+      },
+      methods: {
+        myclick: function (index) {
+          this.currentIndex = index;
+        }
+      },
+    })
+  </script>
+
+</body>
+
+</html>

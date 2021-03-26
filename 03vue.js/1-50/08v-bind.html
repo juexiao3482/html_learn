@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 只有内容才能使用mustache语法 -->
+    <!-- v-bind告诉src是个变量，动态绑定属性 -->
+    <img v-bind:src="imgurl" alt="">
+    <!-- 语法糖 -->
+    <img :src="imgurl" alt="">
+    <a :href="ahref">baidu</a>
+  </div>
+
+
+  <script src="../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        imgurl: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp1-q.mafengwo.net%2Fs7%2FM00%2F25%2FE2%2FwKgB6lPh4UeARKPpAABh4pruLDc72.jpeg%3FimageMogr2%252Fthumbnail%252F%21310x207r%252Fgravity%252FCenter%252Fcrop%252F%21310x207%252Fquality%252F90&refer=http%3A%2F%2Fp1-q.mafengwo.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1619264246&t=181d33dc3049035e3d21f202dbc2a041',
+        ahref: 'http://www.baidu.com'
+      }
+    })
+  </script>
+</body>
+
+</html>

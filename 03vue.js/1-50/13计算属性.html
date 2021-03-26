@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>{{getfl()}}</h2>
+    <h2>{{fullName}}</h2>
+  </div>
+  <script src="../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        f: 'adfs',
+        l: 'bdsfsd'
+      },
+      // 计算属性
+      computed: {
+        // 因为这个是属性，计算属性，所以调用的时候不需要（）
+        fullName: function () {
+          return this.f + " " + this.l;
+        }
+
+      },
+      methods: {
+        getfl() {
+          // this指向的是实例
+          return this.f + " " + this.l;
+          // return f + " " + l;
+        }
+      },
+    })
+  </script>
+
+</body>
+
+</html>

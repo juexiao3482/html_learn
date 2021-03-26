@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 以网页链接的形式显示 -->
+    <h2 v-html="url"></h2>
+    <!-- 也可以显示message，但是不灵活，不能再在中间写内容了，会被覆盖 -->
+    <h2 v-text="message"></h2>
+    <!-- 不解析message -->
+    <h2 v-pre>{{message}}</h2>
+    <!-- 网络延迟或者代码解析出现错误时候，出现{{message}}不好
+    所以添加这个属性，vue在解析之前div有v-cloak，解析之后自动没有 -->
+    <h2 v-cloak>{{message}}</h2>
+
+  </div>
+  <script src="../vue.js"></script>
+  <script>
+    setTimeout(function () {
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello',
+          url: '<a href="http://www.baidu.com">baidu</a>'
+        }
+      })
+
+    }, 1000)
+
+  </script>
+
+</body>
+
+</html>
