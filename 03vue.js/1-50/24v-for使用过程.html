@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 没有key的时候插入元素，只能依次把元素往后挪 -->
+    <!-- 有key的时候插入元素，会先把key和元素对应起来 -->
+    <!-- 如果有key的元素没有发生变化，就不会位移了，直接在中间插入元素 -->
+    <!-- 和虚拟dom以及Diff算法有关 -->
+  </div>
+  <script src="../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '',
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <h2>{{counter}}</h2>
+    <!--<h2 v-bind:title></h2>-->
+    <!--<h2 :title></h2>-->
+    <!--<button v-on:click="counter++">+</button>-->
+    <!--<button v-on:click="counter&#45;&#45;">-</button>-->
+    <!--<button v-on:click="increment">+</button>-->
+    <!--<button v-on:click="decrement">-</button>-->
+    <!-- 事件调用的方法没有参数 -->
+    <button @click="increment">+</button>
+    <button @click="decrement()">-</button>
+    <!--如果methods有参数但是调用的时候没写括号,这个时候输出的是event对象，鼠标点击时间的对象-->
+    <button @click="click2">！</button>
+    <!-- 手动获取到浏览器的event对象 $event -->
+    <button @click="click3('abc',$event)">！</button>
+  </div>
+
+  <script src="../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        counter: 0
+      },
+      methods: {
+        // ES6增强写法
+        increment() {
+          this.counter++
+        },
+        decrement() {
+          this.counter--
+        },
+        click2(event) {
+          console.log(event);
+
+        },
+        click3(abc, event) {
+          console.log(abc, event);
+
+        }
+      }
+    })
+  </script>
+
+</body>
+
+</html>
