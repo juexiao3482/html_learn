@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <cpn1></cpn1>
+    <cpn2></cpn2>
+
+  </div>
+  <script src="../vue.js"></script>
+  <script>
+    // 注册组件
+    Vue.component('cpn1', {
+      template: `
+        <div>
+          <h2>我是标题2222</h2>
+          <p>我是你日天</p>
+          <p>我是你日qwlddfdfdfdfdf</p>
+        </div>`
+    })
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '',
+      },
+      components: {
+        cpn2: {
+          template: `
+            <div>
+              <h2>我是标题2222</h2>
+              <p>我是你日天</p>
+              <p>我是你日qwlddfdfdfdfdf</p>
+            </div>`
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

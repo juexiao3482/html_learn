@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上 -->
+    <label for="male">
+      <!-- name一样只能选择一个 -->
+      <!-- value是这个单选框自己的值，不显示，用于传递参数 -->
+      <!-- 绑定v-model:data的sex 一旦这样绑定可以不写name达到互斥-->
+      <input type="radio" id="male" name="sex" value="男" v-model="sex">男
+    </label>
+    <label for="female">
+      <!-- 绑定data中的sex就会把value的值传给sex -->
+      <input type="radio" id="female" name="sex" value="女" v-model="sex">女
+    </label>
+    <h2>您选择的性别是：{{sex}}</h2>
+  </div>
+  <script src="../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el:'#app',
+      data:{
+        message:'hello',
+        // 写上女就会默认选中女
+        sex:'女',
+        // sex:''
+      }
+
+    })
+  </script>
+
+</body>
+</html>

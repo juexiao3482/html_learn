@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<!-- 根组件是vue实例 ，也可以看做父组件-->
+<!-- 在真实的开发中，vue实例和父组件的通信是一样的 -->
+
+<body>
+  <div id="app">
+    <!-- 2、将父组件的数据传入子组件 -->
+    <!-- v-bind相当于告诉“”中是变量，不添加就会直接把变量名当成字符串 -->
+    <cpn :cmovies="movies" :cmessage="message"></cpn>
+
+  </div>
+
+
+  <template id="cpn">
+    <div>
+      <!-- 3在子组件中使用 -->
+      <!-- 要使用在子组件中的变量名 -->
+      <ul>
+        <li v-for="item in cmovies">{{item}}</li>
+      </ul>
+      {{cmovies}}
+      {{cmessage}}
+
+    </div>
+  </template>
+  <script src="../vue.js"></script>
+  <script>
+    // 子组件，父组件是vue实例，父组件中引用了子组件。将父组件的movie传递给这个
+    // 父传子props
+    // 第三种创建方式？
+    const cpn = {
+      template: '#cpn',
+      // 1、先在子组件里定义一个变量
+      // 这里传入的数据就是上面cpn中的语句传来的
+      // 不能大写命名
+      // 数组里的内容为变量，虽然加了’‘
+      props: ['cmovies', 'cmessage'],
+      props: {
+        // 1这样可以要求传入数据的类型
+        // cmovies: Array,
+        // cmessage: String
+
+        // 2提供默认值
+        cmessage: {
+          type: String,
+          // 如果在上面第二步没传值就会显示默认值
+          default: "ssdsdsd",
+          // 设置用这个组件的时候是必传的值
+          required: true
+        },
+
+        // 如果类型是数组或者对象，默认值必须是一个函数
+        cmovies: {
+          type: Array,
+          //不能这样写 default: []
+          default() {
+            return []
+          }
+        }
+
+
+      },
+      data() {
+        return {}
+      },
+
+    }
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'sjkdfhdskfh',
+        movies: ['1', '2', '3']
+
+      },
+      // 在父组件中声明子组件
+      components: {
+        // 'cpn'=cpn与下面的语法糖等价
+        // 这个是变量cpn
+        cpn
+      }
+    })
+
+    // const name = 'why'
+    // const obj = {
+    //   name: name,
+    //   name
+    //   // 这俩相等
+    // }
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

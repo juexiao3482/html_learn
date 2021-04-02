@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!--父组件替换插槽的标签，但是内容由子组件提供 -->
+  <div id="app">
+    <cpn></cpn>
+    <cpn>
+      <!-- 获取子组件的language -->
+      <!-- 获取yuyan -->
+      <!-- 这里会引用插槽对象 -->
+      <template v-slot="lg">
+        <div>
+          <!-- <span v-for="item in lg.dat">{{item}}---</span> -->
+          <span>{{lg.dat.join('*')}}</span>
+
+
+        </div>
+      </template>
+    </cpn>
+
+  </div>
+
+
+
+  <template id="cpn">
+    <div>
+      <slot :dat="languages">
+        <ul>
+          <li v-for="item in languages">{{item}}</li>
+        </ul>
+      </slot>
+    </div>
+  </template>
+
+
+
+  <script src="../vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '',
+      },
+      components: {
+        cpn: {
+          template: "#cpn",
+          data() {
+            return {
+              languages: ['java', 'go', 'c', 'c++', 'c#']
+            }
+          }
+        }
+
+      }
+    })
+  </script>
+
+</body>
+
+</html>

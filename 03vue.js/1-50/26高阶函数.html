@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // filter/map/reduce
+    //1、 filter回调函数必须返回布尔值，运行与数组元素个数相等的次数
+    // true：函数自动将这次回调的n加入到新的数组
+    // false：返回false时，过滤掉这个n
+    const num = [100, 20, 34, 4545, 643, 345];
+    let Hundred = num.filter(function (n) {
+      if (n > 100) return true;
+      else return false;
+    })
+    console.log(Hundred)
+    let Hundre = num.filter(function (n) {
+      return n > 100;
+    })
+    console.log(Hundre)
+
+    // 准确来说test函数传入了一个函数并且调用了它
+    // 在调用test的时候才具体定义了这个函数
+    var test = function (abc) {
+      abc('Helloworld');
+      console.log(abc);
+    };
+    //函数2的调用
+    // 这里相当于定义了一个新的函数，将这个函数传入了test，作为
+    // test的参数
+    // 因此这个函数function (words) { console.log(words); }=abc
+    // 然后abc('Helloworld');是在调用这个函数，也就是说把'Helloworld'
+    // 作为参数传给这个函数因此是打印了'Helloworld'
+    test(function (words) { console.log(words); });
+    // console.log(abc);
+
+
+    // 2、map函数的使用
+    // 将数组中的元素进行操作然后返回，这个回调函数会运行与数组元素个数相等的次数
+    let new1 = hundre.map(function (n) {
+      // 每个人元素都乘2
+      return n * 2;
+    })
+
+    // 3、reduce函数的使用,对数组中所有内容进行汇总
+    let total = new1.reduce(function (preValue, n) {
+      // 上一次的和+这一次的n
+      return preValue + n;
+
+    })
+
+
+    //计算超过100的值乘2的和
+    let total = num.filter(function (n) {
+      return n < 100;
+    }).map(function (n) {
+      return n * 2
+    }).reduce(function (previous, n) {
+      return previous + n
+    }, 0)//0为初始值；
+
+    let total = nums.filter(n => n < 100).map(n => n * 2).reduce((pre, n) => pre + n);
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <cpn>
+
+
+  </cpn>
+  <div id="app">
+    <my-cpn></my-cpn>
+
+  </div>
+  <script src="../vue.js"></script>
+  <script>
+    // ES6定义字符串可以直接包含换行
+    // ``
+
+
+
+
+
+    // 1创建组件构造器对象
+    const cpnC = Vue.extend({
+      template: `
+      <div>
+        <h2>我是标题</h2>
+        <p>我是你日天</p>
+        <p>我是你日qwlddfdfdfdfdf</p>
+      </div>`
+    })
+
+
+    // 2、注册组件
+    Vue.component('my-cpn', cpnC)
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '',
+      }
+    })
+  </script>
+</body>
+
+</html>

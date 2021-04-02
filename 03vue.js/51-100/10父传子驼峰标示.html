@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- html不支持驼峰 -->
+    <!-- 这里不支持驼峰，所以可以写成c-info -->
+    <cpn :cinfo="info"></cpn>
+
+  </div>
+
+  <template id="cpn">
+    <!-- 定义子组件要包含一个根，div -->
+    <div>
+      {{cinfo}}
+    </div>
+  </template>
+
+
+
+  <script src="../vue.js"></script>
+  <script>
+    const cpn = {
+      template: '#cpn',
+      props: {
+        cinfo: {
+          type: Object,
+          default() {
+            return {}
+          }
+        }
+      }
+    }
+
+
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        info: {
+          name: "wh",
+          age: 18
+
+        }
+      },
+      // 不是全局注册，在vue实例中直接注册的子组件
+      components: {
+        cpn
+
+      }
+    })
+  </script>
+</body>
+
+</html>

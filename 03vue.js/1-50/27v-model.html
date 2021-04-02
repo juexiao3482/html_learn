@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-model将message信息直接显示到文本框中，将message绑定在input/textarea里，双向绑定 -->
+        <!-- 改message，文本框内容改变，改文本框内容，message也改变 -->
+        <!-- v-bind：value是单向绑定，改了文本框内容，message是不改变的 -->
+        <!-- v-on：input 可以监听用户输入的东西-->
+        <!-- 因此@input和：value可以两个一起实现v-model的功能 -->
+        <input type="text" v-model="message">
+        <input type="text" :value="message" @input="valueChange">
+        <!--这样写也可以 @input="message=$event.target.value" -->
+      {{message}}
+      <h2>{{message}}</h2>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                message:'hello'
+            },
+            methods:{
+                // 一旦在浏览器的界面上产生event，浏览器会生成一个event对象，但是上面
+                // 不用写event，因为省略的话会自动把event传过去
+                valueChange(event){
+                    // 这个value就是最新的value
+                    this.message=event.target.value;
+                }
+
+            },
+        })
+    </script>
+</body>
+</html>
